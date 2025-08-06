@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, Size, useFrame, useThree } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
 
@@ -191,8 +191,8 @@ const ShaderMaterial = ({
   maxFps?: number;
   uniforms: Uniforms;
 }) => {
-  const { size } = useThree();
-  const ref = useRef<THREE.Mesh>();
+  const { size }: {size: Size} = useThree();
+  const ref = useRef<THREE.Mesh | null>(null);
   let lastFrameTime = 0;
 
   useFrame(({ clock }) => {
@@ -209,7 +209,7 @@ const ShaderMaterial = ({
   });
 
   const getUniforms = () => {
-    const preparedUniforms: any = {};
+    const preparedUniforms = {};
 
     for (const uniformName in uniforms) {
       const uniform: any = uniforms[uniformName];
