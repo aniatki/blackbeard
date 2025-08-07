@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import React from "react";
 import { ImagesSlider } from "@/components/ui/images-slider";
+import BookingForm from "./BookingForm";
 
 export default function ImagesSliderComponent() {
   const images = [
@@ -12,6 +13,7 @@ export default function ImagesSliderComponent() {
     "https://cdn1.treatwell.net/images/view/v2.i5381668.w1280.h800.x765ADC7D/",
     "https://cdn1.treatwell.net/images/view/v2.i5381639.w1280.h800.xF85B8446/",
   ];
+
   return (
     <ImagesSlider className="h-screen" images={images}>
       <motion.div
@@ -29,12 +31,9 @@ export default function ImagesSliderComponent() {
         className="z-50 flex flex-col justify-center items-center"
       >
         <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
-        The barbershop that<br /> nobody asked for
+          The barbershop that<br /> nobody asked for
         </motion.p>
-        <button className="px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4">
-          <span>Book now →</span>
-          <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
-        </button>
+        <BookingForm />
       </motion.div>
     </ImagesSlider>
   );

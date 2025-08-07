@@ -42,7 +42,7 @@ export const FlipWords = ({
         }}
         animate={{
           opacity: 1,
-          y: 0,
+          y: 7,
         }}
         transition={{
           type: "spring",
@@ -52,13 +52,11 @@ export const FlipWords = ({
         exit={{
           opacity: 0,
           y: -40,
-          x: 40,
           filter: "blur(8px)",
-          scale: 2,
           position: "absolute",
         }}
         className={cn(
-          "z-10 inline-block max-w-max relative text-left text-neutral-900 dark:text-neutral-100 px-2",
+          "z-10 inline-block max-w-max relative text-left text-neutral-900 dark:text-neutral-100 px-2 overflow-hidden",
           className
         )}
         key={currentWord}

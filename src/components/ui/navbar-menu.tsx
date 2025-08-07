@@ -41,7 +41,7 @@ export const MenuItem = ({
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          // transition={transition}
+        // transition={transition}
         >
           {active === item && (
             <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-2 max-w-xs">
@@ -84,30 +84,21 @@ export const Menu = ({
 
 export const ProductItem = ({
   title,
-  description,
-  href,
-  // src,
+  price,
+  duration,
 }: {
   title: string;
-  description: string;
-  href: string;
-  // src: string;
+  price: string;
+  duration: string;
 }) => {
   return (
-    <a href={href} className="flex">
-      {/* <img
-        src={src}
-        width={140}
-        height={70}
-        alt={title}
-        className="shrink-0 rounded-md shadow-2xl"
-      /> */}
+    <a href="" className="flex">
       <div className="">
         <h4 className="font-bold mb-1 text-black dark:text-white">
           {title}
         </h4>
         <p className="text-neutral-700 text-xs max-w-[5rem] dark:text-neutral-400">
-          {description}
+          €{price} - {duration}
         </p>
       </div>
     </a>
